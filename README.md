@@ -112,6 +112,24 @@ curl http://localhost:8780/
 curl -H "Accept: text/markdown" http://localhost:8780/
 ```
 
+## Examples
+
+The [`examples/`](examples/) directory contains runnable demo servers for each framework:
+
+| File | Framework | Port | Run command |
+|---|---|---|---|
+| `flask_server.py` | Flask | 8780 | `python examples/flask_server.py` |
+| `django_server.py` | Django | 8781 | `python examples/django_server.py` |
+| `fastapi_server.py` | FastAPI | 8782 | `python examples/fastapi_server.py` |
+
+Each server exposes three endpoints: `/` (HTML page), `/about` (HTML page), and `/api/data` (JSON — passes through unchanged).
+
+```bash
+# Start any server, then test:
+curl http://localhost:8780/              # Returns HTML
+curl -H "Accept: text/markdown" http://localhost:8780/   # Returns Markdown
+```
+
 ## Development
 
 ```bash
